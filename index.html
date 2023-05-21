@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    
+</body>
+</html>
+
+
+
+
+<head>
+    <title>Weight Calculation App</title>
+    <script>
+        function calculate() {
+            var weight = document.getElementById("weight").value;
+            var goal = document.getElementById("goal").value;
+            var calories = 0;
+            var protein = weight;
+
+            if (goal === "cut") {
+                calories = weight * 8;
+            } else if (goal === "extreme cut") {
+                calories = weight * 11;
+            } else if (goal === "maintain") {
+                calories = weight * 14;
+            } else if (goal === "gain") {
+                calories = weight * 17;
+            } else if (goal === "extreme gain") {
+                calories = weight * 20;
+            }
+
+            document.getElementById("calories").innerHTML = "You need to consume " + calories + " calories per day.";
+            document.getElementById("protein").innerHTML = "You need to eat " + protein + " grams of protein.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Weight Calculation App</h1>
+    <label for="weight">What is your weight?</label>
+    <input type="number" id="weight" required><br><br>
+
+    <label for="goal">What is your goal?</label>
+    <select id="goal" required>
+        <option value="cut">Cut</option>
+        <option value="extreme cut">Extreme Cut</option>
+        <option value="maintain">Maintain</option>
+        <option value="gain">Gain</option>
+        <option value="extreme gain">Extreme Gain</option>
+    </select><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="calories"></div>
+    <div id="protein"></div>
+</body> </html> 
+
